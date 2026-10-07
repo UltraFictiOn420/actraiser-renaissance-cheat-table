@@ -1,0 +1,2892 @@
+[
+  {
+    "version": "v1",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v1/Actraiser_Renaissance_v1.CT"
+  },
+  {
+    "version": "v1",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v1/Actraiser_Renaissance_v1.CT"
+  },
+  {
+    "version": "v1",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v1/Actraiser_Renaissance_v1.CT"
+  },
+  {
+    "version": "v1",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v1/Actraiser_Renaissance_v1.CT"
+  },
+  {
+    "version": "v2",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v2/Actraiser_Renaissance_v2.CT"
+  },
+  {
+    "version": "v2",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v2/Actraiser_Renaissance_v2.CT"
+  },
+  {
+    "version": "v2",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v2/Actraiser_Renaissance_v2.CT"
+  },
+  {
+    "version": "v2",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v2/Actraiser_Renaissance_v2.CT"
+  },
+  {
+    "version": "v3",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v3/Actraiser_Renaissance_v3.CT"
+  },
+  {
+    "version": "v3",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v3/Actraiser_Renaissance_v3.CT"
+  },
+  {
+    "version": "v3",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v3/Actraiser_Renaissance_v3.CT"
+  },
+  {
+    "version": "v3",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v3/Actraiser_Renaissance_v3.CT"
+  },
+  {
+    "version": "v4",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v4/Actraiser_Renaissance_v4.CT"
+  },
+  {
+    "version": "v4",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v4/Actraiser_Renaissance_v4.CT"
+  },
+  {
+    "version": "v4",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v4/Actraiser_Renaissance_v4.CT"
+  },
+  {
+    "version": "v4",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v4/Actraiser_Renaissance_v4.CT"
+  },
+  {
+    "version": "v5",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v5/Actraiser_Renaissance_v5.CT"
+  },
+  {
+    "version": "v5",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v5/Actraiser_Renaissance_v5.CT"
+  },
+  {
+    "version": "v5",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v5/Actraiser_Renaissance_v5.CT"
+  },
+  {
+    "version": "v5",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v5/Actraiser_Renaissance_v5.CT"
+  },
+  {
+    "version": "v5",
+    "id": "4",
+    "category": "Top level",
+    "purpose": "Settlement / Angel Mode",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v5/Actraiser_Renaissance_v5.CT"
+  },
+  {
+    "version": "v5",
+    "id": "5",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v5/Actraiser_Renaissance_v5.CT"
+  },
+  {
+    "version": "v5",
+    "id": "6",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel SP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v5/Actraiser_Renaissance_v5.CT"
+  },
+  {
+    "version": "v6",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v6/Actraiser_Renaissance_v6.CT"
+  },
+  {
+    "version": "v6",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v6/Actraiser_Renaissance_v6.CT"
+  },
+  {
+    "version": "v6",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v6/Actraiser_Renaissance_v6.CT"
+  },
+  {
+    "version": "v6",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v6/Actraiser_Renaissance_v6.CT"
+  },
+  {
+    "version": "v6",
+    "id": "4",
+    "category": "Top level",
+    "purpose": "Settlement / Angel Mode",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v6/Actraiser_Renaissance_v6.CT"
+  },
+  {
+    "version": "v6",
+    "id": "5",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v6/Actraiser_Renaissance_v6.CT"
+  },
+  {
+    "version": "v6",
+    "id": "6",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel SP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v6/Actraiser_Renaissance_v6.CT"
+  },
+  {
+    "version": "v6",
+    "id": "7",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Angel SP Value = 90",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v6/Actraiser_Renaissance_v6.CT"
+  },
+  {
+    "version": "v7",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v7/Actraiser_Renaissance_v7.CT"
+  },
+  {
+    "version": "v7",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v7/Actraiser_Renaissance_v7.CT"
+  },
+  {
+    "version": "v7",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v7/Actraiser_Renaissance_v7.CT"
+  },
+  {
+    "version": "v7",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v7/Actraiser_Renaissance_v7.CT"
+  },
+  {
+    "version": "v7",
+    "id": "4",
+    "category": "Top level",
+    "purpose": "Settlement / Angel Mode",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v7/Actraiser_Renaissance_v7.CT"
+  },
+  {
+    "version": "v7",
+    "id": "5",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v7/Actraiser_Renaissance_v7.CT"
+  },
+  {
+    "version": "v7",
+    "id": "6",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel SP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v7/Actraiser_Renaissance_v7.CT"
+  },
+  {
+    "version": "v7",
+    "id": "7",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Angel SP Value = 90",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v7/Actraiser_Renaissance_v7.CT"
+  },
+  {
+    "version": "v7",
+    "id": "8",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Max Realm Resources (999)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v7/Actraiser_Renaissance_v7.CT"
+  },
+  {
+    "version": "v7",
+    "id": "9",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Usable Items",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v7/Actraiser_Renaissance_v7.CT"
+  },
+  {
+    "version": "v20",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "15",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Super Damage (10x, Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "16",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "One-Hit Kill (Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "23",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "No Player Hit Detection (No Damage + Knockback)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "4",
+    "category": "Top level",
+    "purpose": "Settlement / Angel Mode",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "5",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "6",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel SP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "7",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Angel SP Value = 90",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "8",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Max Realm Resources (999)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "9",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Usable Items",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "11",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fort Build Limit & Fence Capacity = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "14",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fence Stock = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "12",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Invincible Forts & Fences",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "13",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Champions (Combat Stats + Invincibility)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "17",
+    "category": "Settlement / Angel Mode",
+    "purpose": "No Miracle Cooldowns",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "18",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Forts (Attack + Speed + Range + Defense)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "20",
+    "category": "Settlement / Angel Mode",
+    "purpose": "All Legendary Chronicles = 999",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "21",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Instant Champion Summon (Full Gauge)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "22",
+    "category": "Top level",
+    "purpose": "Gameplay / Time",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v20",
+    "id": "19",
+    "category": "Gameplay / Time",
+    "purpose": "Safe Game Speed = 2x",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/history/v20/Actraiser_Renaissance_v20.CT"
+  },
+  {
+    "version": "v21",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "15",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Super Damage (10x, Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "16",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "One-Hit Kill (Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "23",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "No Player Hit Detection (No Damage + Knockback)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "4",
+    "category": "Top level",
+    "purpose": "Settlement / Angel Mode",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "5",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "6",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel SP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "7",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Angel SP Value = 90",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "8",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Max Realm Resources (999)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "9",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Usable Items",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "11",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fort Build Limit & Fence Capacity = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "14",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fence Stock = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "12",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Invincible Forts & Fences",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "13",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Champions (Combat Stats + Invincibility)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "17",
+    "category": "Settlement / Angel Mode",
+    "purpose": "No Miracle Cooldowns",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "18",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Forts (Attack + Speed + Range + Defense)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "20",
+    "category": "Settlement / Angel Mode",
+    "purpose": "All Legendary Chronicles = 999",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "21",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Instant Champion Summon (Full Gauge)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "24",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Death Aura - Cave Monsters Only (No Sieges)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "22",
+    "category": "Top level",
+    "purpose": "Gameplay / Time",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v21",
+    "id": "19",
+    "category": "Gameplay / Time",
+    "purpose": "Safe Game Speed = 2x",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/recommended/v21/Actraiser_Renaissance_v21.CT"
+  },
+  {
+    "version": "v22",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "15",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Super Damage (10x, Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "16",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "One-Hit Kill (Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "23",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "No Player Hit Detection (No Damage + Knockback)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "25",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Teleport to Nearest Gold Scroll (F6 Hotkey)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "4",
+    "category": "Top level",
+    "purpose": "Settlement / Angel Mode",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "5",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "6",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel SP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "7",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Angel SP Value = 90",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "8",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Max Realm Resources (999)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "9",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Usable Items",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "11",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fort Build Limit & Fence Capacity = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "14",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fence Stock = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "12",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Invincible Forts & Fences",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "13",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Champions (Combat Stats + Invincibility)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "17",
+    "category": "Settlement / Angel Mode",
+    "purpose": "No Miracle Cooldowns",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "18",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Forts (Attack + Speed + Range + Defense)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "20",
+    "category": "Settlement / Angel Mode",
+    "purpose": "All Legendary Chronicles = 999",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "21",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Instant Champion Summon (Full Gauge)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "24",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Death Aura - Cave Monsters Only (No Sieges)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "22",
+    "category": "Top level",
+    "purpose": "Gameplay / Time",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v22",
+    "id": "19",
+    "category": "Gameplay / Time",
+    "purpose": "Safe Game Speed = 2x",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v22/Actraiser_Renaissance_v22.CT"
+  },
+  {
+    "version": "v23",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "15",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Super Damage (10x, Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "16",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "One-Hit Kill (Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "23",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "No Player Hit Detection (No Damage + Knockback)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "25",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Teleport to Nearest Gold Scroll (F6 Hotkey)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "4",
+    "category": "Top level",
+    "purpose": "Settlement / Angel Mode",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "5",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "6",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel SP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "7",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Angel SP Value = 90",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "8",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Max Realm Resources (999)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "9",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Usable Items",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "11",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fort Build Limit & Fence Capacity = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "14",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fence Stock = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "12",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Invincible Forts & Fences",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "13",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Champions (Combat Stats + Invincibility)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "17",
+    "category": "Settlement / Angel Mode",
+    "purpose": "No Miracle Cooldowns",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "18",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Forts (Attack + Speed + Range + Defense)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "20",
+    "category": "Settlement / Angel Mode",
+    "purpose": "All Legendary Chronicles = 999",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "21",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Instant Champion Summon (Full Gauge)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "24",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Death Aura - Cave Monsters Only (No Sieges)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "22",
+    "category": "Top level",
+    "purpose": "Gameplay / Time",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v23",
+    "id": "19",
+    "category": "Gameplay / Time",
+    "purpose": "Safe Game Speed = 2x",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v23/Actraiser_Renaissance_v23.CT"
+  },
+  {
+    "version": "v24",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "15",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Super Damage (10x, Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "16",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "One-Hit Kill (Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "23",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "No Player Hit Detection (No Damage + Knockback)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "25",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Teleport to Nearest Gold Scroll (Z Hotkey)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "4",
+    "category": "Top level",
+    "purpose": "Settlement / Angel Mode",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "5",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "6",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel SP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "7",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Angel SP Value = 90",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "8",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Max Realm Resources (999)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "9",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Usable Items",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "11",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fort Build Limit & Fence Capacity = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "14",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fence Stock = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "12",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Invincible Forts & Fences",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "13",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Champions (Combat Stats + Invincibility)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "17",
+    "category": "Settlement / Angel Mode",
+    "purpose": "No Miracle Cooldowns",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "18",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Forts (Attack + Speed + Range + Defense)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "20",
+    "category": "Settlement / Angel Mode",
+    "purpose": "All Legendary Chronicles = 999",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "21",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Instant Champion Summon (Full Gauge)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "24",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Death Aura - Cave Monsters Only (No Sieges)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "22",
+    "category": "Top level",
+    "purpose": "Gameplay / Time",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v24",
+    "id": "19",
+    "category": "Gameplay / Time",
+    "purpose": "Safe Game Speed = 2x",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v24/Actraiser_Renaissance_v24.CT"
+  },
+  {
+    "version": "v25",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "15",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Super Damage (10x, Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "16",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "One-Hit Kill (Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "23",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "No Player Hit Detection (No Damage + Knockback)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "25",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Teleport to Nearest Gold Scroll (J Hotkey - One Shot)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [
+      74
+    ],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "4",
+    "category": "Top level",
+    "purpose": "Settlement / Angel Mode",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "5",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "6",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel SP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "7",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Angel SP Value = 90",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "8",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Max Realm Resources (999)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "9",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Usable Items",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "11",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fort Build Limit & Fence Capacity = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "14",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fence Stock = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "12",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Invincible Forts & Fences",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "13",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Champions (Combat Stats + Invincibility)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "17",
+    "category": "Settlement / Angel Mode",
+    "purpose": "No Miracle Cooldowns",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "18",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Forts (Attack + Speed + Range + Defense)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "20",
+    "category": "Settlement / Angel Mode",
+    "purpose": "All Legendary Chronicles = 999",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "21",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Instant Champion Summon (Full Gauge)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "24",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Death Aura - Cave Monsters Only (No Sieges)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "22",
+    "category": "Top level",
+    "purpose": "Gameplay / Time",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v25",
+    "id": "19",
+    "category": "Gameplay / Time",
+    "purpose": "Safe Game Speed = 2x",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v25/Actraiser_Renaissance_v25.CT"
+  },
+  {
+    "version": "v26",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "15",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Super Damage (10x, Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "16",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "One-Hit Kill (Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "23",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "No Player Hit Detection (No Damage + Knockback)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "25",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Teleport to Nearest Gold Scroll (J Hotkey - Last Result: READY)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [
+      74
+    ],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "4",
+    "category": "Top level",
+    "purpose": "Settlement / Angel Mode",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "5",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "6",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel SP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "7",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Angel SP Value = 90",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "8",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Max Realm Resources (999)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "9",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Usable Items",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "11",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fort Build Limit & Fence Capacity = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "14",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fence Stock = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "12",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Invincible Forts & Fences",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "13",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Champions (Combat Stats + Invincibility)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "17",
+    "category": "Settlement / Angel Mode",
+    "purpose": "No Miracle Cooldowns",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "18",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Forts (Attack + Speed + Range + Defense)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "20",
+    "category": "Settlement / Angel Mode",
+    "purpose": "All Legendary Chronicles = 999",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "21",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Instant Champion Summon (Full Gauge)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "24",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Death Aura - Cave Monsters Only (No Sieges)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "22",
+    "category": "Top level",
+    "purpose": "Gameplay / Time",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v26",
+    "id": "19",
+    "category": "Gameplay / Time",
+    "purpose": "Safe Game Speed = 2x",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v26/Actraiser_Renaissance_v26.CT"
+  },
+  {
+    "version": "v27",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "15",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Super Damage (10x, Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "16",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "One-Hit Kill (Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "23",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "No Player Hit Detection (No Damage + Knockback)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "25",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Teleport to Nearest Gold Scroll (J Hotkey - Last Result: READY)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [
+      74
+    ],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "4",
+    "category": "Top level",
+    "purpose": "Settlement / Angel Mode",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "5",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "6",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel SP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "7",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Angel SP Value = 90",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "8",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Max Realm Resources (999)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "9",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Usable Items",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "11",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fort Build Limit & Fence Capacity = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "14",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fence Stock = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "12",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Invincible Forts & Fences",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "13",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Champions (Combat Stats + Invincibility)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "17",
+    "category": "Settlement / Angel Mode",
+    "purpose": "No Miracle Cooldowns",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "18",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Forts (Attack + Speed + Range + Defense)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "20",
+    "category": "Settlement / Angel Mode",
+    "purpose": "All Legendary Chronicles = 999",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "21",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Instant Champion Summon (Full Gauge)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "24",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Death Aura - Cave Monsters Only (No Sieges)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "22",
+    "category": "Top level",
+    "purpose": "Gameplay / Time",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v27",
+    "id": "19",
+    "category": "Gameplay / Time",
+    "purpose": "Safe Game Speed = 2x",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v27/Actraiser_Renaissance_v27.CT"
+  },
+  {
+    "version": "v28",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "15",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Super Damage (10x, Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "16",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "One-Hit Kill (Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "23",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "No Player Hit Detection (No Damage + Knockback)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "25",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Teleport to Nearest Gold Scroll (J Hotkey - Last Result: READY)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [
+      74
+    ],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "4",
+    "category": "Top level",
+    "purpose": "Settlement / Angel Mode",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "5",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "6",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel SP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "7",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Angel SP Value = 90",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "8",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Max Realm Resources (999)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "9",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Usable Items",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "11",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fort Build Limit & Fence Capacity = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "14",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fence Stock = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "12",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Invincible Forts & Fences",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "13",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Champions (Combat Stats + Invincibility)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "17",
+    "category": "Settlement / Angel Mode",
+    "purpose": "No Miracle Cooldowns",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "18",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Forts (Attack + Speed + Range + Defense)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "20",
+    "category": "Settlement / Angel Mode",
+    "purpose": "All Legendary Chronicles = 999",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "21",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Instant Champion Summon (Full Gauge)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "24",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Death Aura - Cave Monsters Only (No Sieges)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "22",
+    "category": "Top level",
+    "purpose": "Gameplay / Time",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v28",
+    "id": "19",
+    "category": "Gameplay / Time",
+    "purpose": "Safe Game Speed = 2x",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v28/Actraiser_Renaissance_v28.CT"
+  },
+  {
+    "version": "v29",
+    "id": "0",
+    "category": "Top level",
+    "purpose": "Act Mode / Side-Scroller",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "1",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "2",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite MP",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "3",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Infinite Lives",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "15",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Super Damage (10x, Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "16",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "One-Hit Kill (Enemies Only)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "23",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "No Player Hit Detection (No Damage + Knockback)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "25",
+    "category": "Act Mode / Side-Scroller",
+    "purpose": "Teleport to Nearest Gold Scroll (J Hotkey - Last Result: READY)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [
+      74
+    ],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "4",
+    "category": "Top level",
+    "purpose": "Settlement / Angel Mode",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "5",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel HP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "6",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Angel SP",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "7",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Angel SP Value = 90",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "8",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Max Realm Resources (999)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "9",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Infinite Usable Items",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "11",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fort Build Limit & Fence Capacity = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "14",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Fence Stock = 99",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "12",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Invincible Forts & Fences",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "13",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Champions (Combat Stats + Invincibility)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "17",
+    "category": "Settlement / Angel Mode",
+    "purpose": "No Miracle Cooldowns",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "18",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Super Forts (Attack + Speed + Range + Defense)",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "20",
+    "category": "Settlement / Angel Mode",
+    "purpose": "All Legendary Chronicles = 999",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "21",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Instant Champion Summon (Full Gauge)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "24",
+    "category": "Settlement / Angel Mode",
+    "purpose": "Death Aura - Cave Monsters Only (No Sieges)",
+    "codeType": "Auto Assembler",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "22",
+    "category": "Top level",
+    "purpose": "Gameplay / Time",
+    "codeType": "Category",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  },
+  {
+    "version": "v29",
+    "id": "19",
+    "category": "Gameplay / Time",
+    "purpose": "Safe Game Speed = 2x",
+    "codeType": "Lua / Auto Assembler wrapper",
+    "status": "See project testing notes; presence is not proof of working behavior",
+    "virtualKeyCodes": [],
+    "table": "tables/experiments/abandoned-teleport/v29/Actraiser_Renaissance_v29.CT"
+  }
+]

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="46">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"Act Mode / Side-Scroller"</Description>
+      <Options moHideChildren="1"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"Infinite HP"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_HP_Damage,GameAssembly.dll,29 51 10 BA 00 00 00 00 8B 41 10 0F 48 C2 89 41 10 C3)
+alloc(ActR_HP_Code,128,ActR_HP_Damage)
+label(ActR_HP_NormalDamage)
+label(ActR_HP_Return)
+
+ActR_HP_Code:
+  // SVObjParamater.ParamType: 0 = player, 1 = normal enemy, 2 = boss.
+  cmp dword ptr [rcx+20],00
+  jne ActR_HP_NormalDamage
+
+  // Player: refill current HP from maximum HP and ignore this hit.
+  mov eax,[rcx+14]
+  mov [rcx+10],eax
+  ret
+
+ActR_HP_NormalDamage:
+  // Preserve the original damage path for enemies and bosses.
+  sub [rcx+10],edx
+  mov edx,00000000
+  jmp ActR_HP_Return
+
+assert(ActR_HP_Damage,29 51 10 BA 00 00 00 00)
+ActR_HP_Damage:
+  jmp ActR_HP_Code
+  nop 3
+ActR_HP_Return:
+
+registersymbol(ActR_HP_Damage)
+
+[DISABLE]
+ActR_HP_Damage:
+  db 29 51 10 BA 00 00 00 00
+
+unregistersymbol(ActR_HP_Damage)
+dealloc(ActR_HP_Code)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2</ID>
+          <Description>"Infinite MP"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_MP_Get,GameAssembly.dll,48 83 EC 28 80 B9 6C 02 00 00 00 74 16 48 8B 81 80 02 00 00 48 85 C0 74 11 F3 0F 2C 40 18 48 83 C4 28 C3)
+aobscanmodule(ActR_MP_Set,GameAssembly.dll,48 8B 81 80 02 00 00 48 85 C0 74 19 66 0F 6E C2 0F 5B C0 F3 0F 11 40 18 F3 0F 11 81 C0 02 00 00)
+alloc(ActR_MP_Code,128,ActR_MP_Set)
+label(ActR_MP_Convert)
+label(ActR_MP_Return)
+
+ActR_MP_Code:
+  mov r11,[rcx+00000288]
+  test r11,r11
+  je ActR_MP_Convert
+  cvttss2si edx,[r11+18]
+ActR_MP_Convert:
+  movd xmm0,edx
+  cvtdq2ps xmm0,xmm0
+  jmp ActR_MP_Return
+
+assert(ActR_MP_Get+10,80)
+assert(ActR_MP_Set+0C,66 0F 6E C2 0F 5B C0)
+
+// Read maximum MP in place of current MP.
+ActR_MP_Get+10:
+  db 88
+
+// Force every attempted MP change to use maximum MP.
+ActR_MP_Set+0C:
+  jmp ActR_MP_Code
+  nop 2
+ActR_MP_Return:
+
+registersymbol(ActR_MP_Get)
+registersymbol(ActR_MP_Set)
+
+[DISABLE]
+assert(ActR_MP_Get+10,88)
+
+ActR_MP_Get+10:
+  db 80
+ActR_MP_Set+0C:
+  db 66 0F 6E C2 0F 5B C0
+
+unregistersymbol(ActR_MP_Get)
+unregistersymbol(ActR_MP_Set)
+dealloc(ActR_MP_Code)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3</ID>
+          <Description>"Infinite Lives"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserLivesTimer then
+  ActraiserLivesTimer.destroy()
+  ActraiserLivesTimer = nil
+end
+
+local function resolveActraiserLivesUsed()
+  local root = getAddressSafe('GameAssembly.dll+16A34B0')
+  if not root then return nil end
+
+  local klass = readPointer(root)
+  if not klass or klass == 0 then return nil end
+
+  local staticFields = readPointer(klass + 0xB8)
+  if not staticFields or staticFields == 0 then return nil end
+
+  local manager = readPointer(staticFields)
+  if not manager or manager == 0 then return nil end
+
+  local saveData = readPointer(manager + 0x30)
+  if not saveData or saveData == 0 then return nil end
+
+  return saveData + 0x34
+end
+
+local function refillActraiserLives()
+  local address = resolveActraiserLivesUsed()
+  if address then writeInteger(address, 0) end
+end
+
+refillActraiserLives()
+ActraiserLivesTimer = createTimer(nil, false)
+ActraiserLivesTimer.Interval = 100
+ActraiserLivesTimer.OnTimer = refillActraiserLives
+ActraiserLivesTimer.Enabled = true
+
+{$asm}
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserLivesTimer then
+  ActraiserLivesTimer.destroy()
+  ActraiserLivesTimer = nil
+end
+
+{$asm}
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <Comments>Actraiser Renaissance (Steam/PC)
+Initial table build for Act Mode / side-scroller gameplay.
+
+Infinite HP hooks the authoritative SVObjParamater.Damage routine and filters ParamType so only the player is protected. Infinite MP uses unique GameAssembly.dll AOB signatures derived from the game's IL2CPP MP accessors. Infinite Lives keeps SaveData.actContinueCnt (continues used) at zero; zero corresponds to the displayed three lives.
+
+Attach Cheat Engine to ActraiserR.exe, expand the group, and activate entries individually.</Comments>
+</CheatTable>

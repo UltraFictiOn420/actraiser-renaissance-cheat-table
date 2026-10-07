@@ -1,0 +1,1727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Actraiser Renaissance table v21 -->
+<CheatTable CheatEngineTableVersion="46">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"Act Mode / Side-Scroller"</Description>
+      <Options moHideChildren="1"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"Infinite HP"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+// Exact unmodified CallFixedUpdate entry used to identify the live player parameter block.
+aobscanmodule(ActR_HP_Capture,GameAssembly.dll,40 53 48 83 EC 60 80 3D 9A EB 27 01 00 48 8B D9 75 12 8B 0D 74 6C E3 00 E8 73 C6 D6 FF C6 05 83 EB 27 01 01)
+aobscanmodule(ActR_HP_Damage,GameAssembly.dll,29 51 10 BA 00 00 00 00 8B 41 10 0F 48 C2 89 41 10 C3)
+alloc(ActR_HP_Code,256,ActR_HP_Capture)
+label(ActR_HP_CaptureCode)
+label(ActR_HP_CaptureOriginal)
+label(ActR_HP_CaptureReturn)
+label(ActR_HP_DamageCode)
+label(ActR_HP_NormalDamage)
+label(ActR_HP_DamageReturn)
+label(ActR_HP_PlayerParam)
+
+ActR_HP_Code:
+ActR_HP_CaptureCode:
+  // CallFixedUpdate supplies the full object, where isPlayerble is reliable.
+  cmp byte ptr [rcx+000000FD],01
+  jne ActR_HP_CaptureOriginal
+  mov rax,[rcx+18]
+  mov [ActR_HP_PlayerParam],rax
+ActR_HP_CaptureOriginal:
+  push rbx
+  sub rsp,60
+  jmp ActR_HP_CaptureReturn
+
+ActR_HP_DamageCode:
+  // The shared damage routine supplies SVObjParamater directly.
+  cmp rcx,[ActR_HP_PlayerParam]
+  jne ActR_HP_NormalDamage
+
+  // Exact player parameter block: ignore damage and refill to maximum HP.
+  mov eax,[rcx+14]
+  mov [rcx+10],eax
+  ret
+
+ActR_HP_NormalDamage:
+  // Every non-player parameter block follows the original damage path.
+  sub [rcx+10],edx
+  mov edx,00000000
+  jmp ActR_HP_DamageReturn
+
+align 8
+ActR_HP_PlayerParam:
+  dq 0
+
+assert(ActR_HP_Capture,40 53 48 83 EC 60)
+ActR_HP_Capture:
+  jmp ActR_HP_CaptureCode
+  nop
+ActR_HP_CaptureReturn:
+
+assert(ActR_HP_Damage,29 51 10 BA 00 00 00 00)
+ActR_HP_Damage:
+  jmp ActR_HP_DamageCode
+  nop 3
+ActR_HP_DamageReturn:
+
+registersymbol(ActR_HP_Capture)
+registersymbol(ActR_HP_Damage)
+registersymbol(ActR_HP_PlayerParam)
+
+[DISABLE]
+ActR_HP_Capture:
+  db 40 53 48 83 EC 60
+ActR_HP_Damage:
+  db 29 51 10 BA 00 00 00 00
+
+unregistersymbol(ActR_HP_Capture)
+unregistersymbol(ActR_HP_Damage)
+unregistersymbol(ActR_HP_PlayerParam)
+dealloc(ActR_HP_Code)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2</ID>
+          <Description>"Infinite MP"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserActMPTimer then
+  ActraiserActMPTimer.destroy()
+  ActraiserActMPTimer = nil
+end
+
+ActraiserResolveActPlayerReader = function()
+  local root = getAddressSafe('GameAssembly.dll+16A3788')
+  if not root then return nil end
+
+  local klass = readPointer(root)
+  if not klass or klass == 0 then return nil end
+
+  local staticFields = readPointer(klass + 0xB8)
+  if not staticFields or staticFields == 0 then return nil end
+
+  local sceneAct = readPointer(staticFields + 0x50)
+  if not sceneAct or sceneAct == 0 then return nil end
+
+  local playerReader = readPointer(sceneAct + 0xC8)
+  if not playerReader or playerReader == 0 then return nil end
+  return playerReader
+end
+
+local function refillActraiserActMP()
+  pcall(function()
+    local playerReader = ActraiserResolveActPlayerReader()
+    if not playerReader then return end
+
+    -- Act Mode stores current/max MP in ExpUniValues.ExpValue objects as floats.
+    local currentMP = readPointer(playerReader + 0x280)
+    local maximumMP = readPointer(playerReader + 0x288)
+    if not currentMP or currentMP == 0 or not maximumMP or maximumMP == 0 then return end
+
+    local maximum = readFloat(maximumMP + 0x18)
+    if maximum and maximum &gt;= 0 and maximum &lt;= 100000 then
+      writeFloat(currentMP + 0x18, maximum)
+      writeFloat(playerReader + 0x2C0, maximum)
+    end
+  end)
+end
+
+refillActraiserActMP()
+ActraiserActMPTimer = createTimer(nil, false)
+ActraiserActMPTimer.Interval = 50
+ActraiserActMPTimer.OnTimer = refillActraiserActMP
+ActraiserActMPTimer.Enabled = true
+
+{$asm}
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserActMPTimer then
+  ActraiserActMPTimer.destroy()
+  ActraiserActMPTimer = nil
+end
+ActraiserResolveActPlayerReader = nil
+
+{$asm}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3</ID>
+          <Description>"Infinite Lives"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserLivesTimer then
+  ActraiserLivesTimer.destroy()
+  ActraiserLivesTimer = nil
+end
+
+local function resolveActraiserLivesUsed()
+  local root = getAddressSafe('GameAssembly.dll+16A34B0')
+  if not root then return nil end
+
+  local klass = readPointer(root)
+  if not klass or klass == 0 then return nil end
+
+  local staticFields = readPointer(klass + 0xB8)
+  if not staticFields or staticFields == 0 then return nil end
+
+  local manager = readPointer(staticFields)
+  if not manager or manager == 0 then return nil end
+
+  local saveData = readPointer(manager + 0x30)
+  if not saveData or saveData == 0 then return nil end
+
+  return saveData + 0x34
+end
+
+local function refillActraiserLives()
+  local address = resolveActraiserLivesUsed()
+  if address then writeInteger(address, 0) end
+end
+
+refillActraiserLives()
+ActraiserLivesTimer = createTimer(nil, false)
+ActraiserLivesTimer.Interval = 100
+ActraiserLivesTimer.OnTimer = refillActraiserLives
+ActraiserLivesTimer.Enabled = true
+
+{$asm}
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserLivesTimer then
+  ActraiserLivesTimer.destroy()
+  ActraiserLivesTimer = nil
+end
+
+{$asm}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>15</ID>
+          <Description>"Super Damage (10x, Enemies Only)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+// ActlReadObject.CallGetDamage: hook the final integer conversion used by ordinary hits.
+// The adjacent One-Hit Kill hook starts after these 12 bytes, so either toggle can load first.
+aobscanmodule(ActR_ActDamage10x,GameAssembly.dll,F3 0F 2C C1 F3 0F 11 8F DC 02 00 00)
+alloc(ActR_ActDamage10xCode,160,ActR_ActDamage10x)
+label(ActR_ActDamage10xStore)
+label(ActR_ActDamage10xReturn)
+
+ActR_ActDamage10xCode:
+  cvttss2si eax,xmm1
+
+  // Resolve SceneAct.AcssInstance.playerReader.gameParamater at hit time.
+  // Runtime inspection shows that enemies leave ParamType/uniqueID at zero,
+  // so pointer identity is the reliable player/enemy discriminator.
+  mov r11,[rdi+18]
+  test r11,r11
+  je ActR_ActDamage10xStore
+
+  mov r10,[GameAssembly.dll+16A3788]
+  test r10,r10
+  je ActR_ActDamage10xStore
+  mov r10,[r10+000000B8]
+  test r10,r10
+  je ActR_ActDamage10xStore
+  mov r10,[r10+50]
+  test r10,r10
+  je ActR_ActDamage10xStore
+  mov r10,[r10+000000C8]
+  test r10,r10
+  je ActR_ActDamage10xStore
+  mov r10,[r10+18]
+  test r10,r10
+  je ActR_ActDamage10xStore
+  cmp r11,r10
+  je ActR_ActDamage10xStore
+  test eax,eax
+  jle ActR_ActDamage10xStore
+  imul eax,eax,0A
+
+ActR_ActDamage10xStore:
+  movss [rdi+000002DC],xmm1
+  jmp ActR_ActDamage10xReturn
+
+assert(ActR_ActDamage10x,F3 0F 2C C1 F3 0F 11 8F DC 02 00 00)
+ActR_ActDamage10x:
+  jmp ActR_ActDamage10xCode
+  nop 7
+ActR_ActDamage10xReturn:
+
+registersymbol(ActR_ActDamage10x)
+
+[DISABLE]
+ActR_ActDamage10x:
+  db F3 0F 2C C1 F3 0F 11 8F DC 02 00 00
+
+unregistersymbol(ActR_ActDamage10x)
+dealloc(ActR_ActDamage10xCode)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>16</ID>
+          <Description>"One-Hit Kill (Enemies Only)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_ActOneHit,GameAssembly.dll,89 87 E0 02 00 00 85 C0 7F 43 41 0F 2F CA 41 8B DF)
+alloc(ActR_ActOneHitCode,160,ActR_ActOneHit)
+label(ActR_ActOneHitStore)
+label(ActR_ActOneHitReturn)
+
+ActR_ActOneHitCode:
+  mov r11,[rdi+18]
+  test r11,r11
+  je ActR_ActOneHitStore
+
+  // Resolve the exact live player parameter pointer; all other targets are enemies/objects.
+  mov r10,[GameAssembly.dll+16A3788]
+  test r10,r10
+  je ActR_ActOneHitStore
+  mov r10,[r10+000000B8]
+  test r10,r10
+  je ActR_ActOneHitStore
+  mov r10,[r10+50]
+  test r10,r10
+  je ActR_ActOneHitStore
+  mov r10,[r10+000000C8]
+  test r10,r10
+  je ActR_ActOneHitStore
+  mov r10,[r10+18]
+  test r10,r10
+  je ActR_ActOneHitStore
+  cmp r11,r10
+  je ActR_ActOneHitStore
+  test eax,eax
+  jle ActR_ActOneHitStore
+
+  // Exact current HP guarantees zero without using an unsafe oversized value.
+  mov eax,[r11+10]
+
+ActR_ActOneHitStore:
+  mov [rdi+000002E0],eax
+  jmp ActR_ActOneHitReturn
+
+assert(ActR_ActOneHit,89 87 E0 02 00 00)
+ActR_ActOneHit:
+  jmp ActR_ActOneHitCode
+  nop
+ActR_ActOneHitReturn:
+
+registersymbol(ActR_ActOneHit)
+
+[DISABLE]
+ActR_ActOneHit:
+  db 89 87 E0 02 00 00
+
+unregistersymbol(ActR_ActOneHit)
+dealloc(ActR_ActOneHitCode)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>23</ID>
+          <Description>"No Player Hit Detection (No Damage + Knockback)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+// ActlReadObject.CallGetDamage receives the object being hit in RCX.
+// Return before its prologue only when that object owns the exact live player block.
+aobscanmodule(ActR_NoPlayerHit,GameAssembly.dll,48 89 74 24 18 48 89 7C 24 20 55 41 56 41 57 48 8D 6C 24 B9 48 81 EC B0 00 00 00 80 3D C6 E6 27 01 00 4C 8B F2 48 8B F9)
+alloc(ActR_NoPlayerHitCode,256,ActR_NoPlayerHit)
+label(ActR_NoPlayerHitOriginal)
+label(ActR_NoPlayerHitReturn)
+
+ActR_NoPlayerHitCode:
+  mov r11,[rcx+18]
+  test r11,r11
+  je ActR_NoPlayerHitOriginal
+
+  // Resolve SceneAct.AcssInstance.playerReader.gameParamater.
+  // Any unavailable pointer falls through to the game's original hit handling.
+  mov r10,[GameAssembly.dll+16A3788]
+  test r10,r10
+  je ActR_NoPlayerHitOriginal
+  mov r10,[r10+000000B8]
+  test r10,r10
+  je ActR_NoPlayerHitOriginal
+  mov r10,[r10+50]
+  test r10,r10
+  je ActR_NoPlayerHitOriginal
+  mov r10,[r10+000000C8]
+  test r10,r10
+  je ActR_NoPlayerHitOriginal
+  mov r10,[r10+18]
+  test r10,r10
+  je ActR_NoPlayerHitOriginal
+
+  cmp r11,r10
+  jne ActR_NoPlayerHitOriginal
+  ret
+
+ActR_NoPlayerHitOriginal:
+  mov [rsp+18],rsi
+  mov [rsp+20],rdi
+  jmp ActR_NoPlayerHitReturn
+
+assert(ActR_NoPlayerHit,48 89 74 24 18 48 89 7C 24 20)
+ActR_NoPlayerHit:
+  jmp ActR_NoPlayerHitCode
+  nop 5
+ActR_NoPlayerHitReturn:
+
+registersymbol(ActR_NoPlayerHit)
+
+[DISABLE]
+ActR_NoPlayerHit:
+  db 48 89 74 24 18 48 89 7C 24 20
+
+unregistersymbol(ActR_NoPlayerHit)
+dealloc(ActR_NoPlayerHitCode)
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"Settlement / Angel Mode"</Description>
+      <Options moHideChildren="1"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>5</ID>
+          <Description>"Infinite Angel HP"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_AngelHP_Setter,GameAssembly.dll,40 53 48 83 EC 20 80 3D 0F EB 74 00 00 8B DA 75 12 8B 0D AD CF 2A 00 E8 F4 EB 22 FF C6 05 F9 EA 74 00 01)
+alloc(ActR_AngelHP_Code,128,ActR_AngelHP_Setter)
+label(ActR_AngelHP_Return)
+
+ActR_AngelHP_Code:
+  // CRTAngel.set_nowHp: force every requested HP value to the angel's maxHp.
+  mov edx,[rcx+000001C4]
+  push rbx
+  sub rsp,20
+  jmp ActR_AngelHP_Return
+
+assert(ActR_AngelHP_Setter,40 53 48 83 EC 20)
+ActR_AngelHP_Setter:
+  jmp ActR_AngelHP_Code
+  nop
+ActR_AngelHP_Return:
+
+registersymbol(ActR_AngelHP_Setter)
+
+[DISABLE]
+ActR_AngelHP_Setter:
+  db 40 53 48 83 EC 20
+
+unregistersymbol(ActR_AngelHP_Setter)
+dealloc(ActR_AngelHP_Code)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>6</ID>
+          <Description>"Infinite Angel SP"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_AngelSP_Setter,GameAssembly.dll,40 53 48 83 EC 20 80 3D 51 EA 74 00 00 8B DA 75 12 8B 0D F5 CE 2A 00 E8 34 EB 22 FF C6 05 3B EA 74 00 01)
+alloc(ActR_AngelSP_Code,128,ActR_AngelSP_Setter)
+label(ActR_AngelSP_Return)
+
+ActR_AngelSP_Code:
+  // CRTAngel.set_nowSp: force every requested SP value to the angel's maxSp.
+  mov edx,[rcx+000001C8]
+  push rbx
+  sub rsp,20
+  jmp ActR_AngelSP_Return
+
+assert(ActR_AngelSP_Setter,40 53 48 83 EC 20)
+ActR_AngelSP_Setter:
+  jmp ActR_AngelSP_Code
+  nop
+ActR_AngelSP_Return:
+
+registersymbol(ActR_AngelSP_Setter)
+
+[DISABLE]
+ActR_AngelSP_Setter:
+  db 40 53 48 83 EC 20
+
+unregistersymbol(ActR_AngelSP_Setter)
+dealloc(ActR_AngelSP_Code)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>7</ID>
+          <Description>"Angel SP Value = 90"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_AngelSP_UISet,GameAssembly.dll,48 83 EC 38 4C 8B 51 50 45 84 C0 74 2D 48 8B 81 A8 00 00 00 48 85 C0 74 48 83 78 18 01 76 48)
+alloc(ActR_AngelSP_UISetCode,64,ActR_AngelSP_UISet)
+label(ActR_AngelSP_UISetReturn)
+
+ActR_AngelSP_UISetCode:
+  // CRTUI.SetSp: keep the visible HUD value synchronized with the 90-SP toggle.
+  mov edx,0000005A
+  sub rsp,38
+  mov r10,[rcx+50]
+  jmp ActR_AngelSP_UISetReturn
+
+assert(ActR_AngelSP_UISet,48 83 EC 38 4C 8B 51 50)
+ActR_AngelSP_UISet:
+  jmp ActR_AngelSP_UISetCode
+  nop 3
+ActR_AngelSP_UISetReturn:
+
+registersymbol(ActR_AngelSP_UISet)
+
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserAngelSP90Timer then
+  ActraiserAngelSP90Timer.destroy()
+  ActraiserAngelSP90Timer = nil
+end
+
+ActraiserResolveAngelSP90 = function()
+  local root = getAddressSafe('GameAssembly.dll+16A34B0')
+  if not root then return nil end
+
+  local klass = readPointer(root)
+  if not klass or klass == 0 then return nil end
+
+  local staticFields = readPointer(klass + 0xB8)
+  if not staticFields or staticFields == 0 then return nil end
+
+  local manager = readPointer(staticFields)
+  if not manager or manager == 0 then return nil end
+
+  local saveData = readPointer(manager + 0x30)
+  if not saveData or saveData == 0 then return nil end
+
+  return saveData + 0x60
+end
+
+local function setActraiserAngelSP90()
+  local address = ActraiserResolveAngelSP90()
+  if not address then return end
+
+  if ActraiserAngelSP90Address ~= address then
+    ActraiserAngelSP90Address = address
+    ActraiserAngelSP90Original = readInteger(address)
+  end
+
+  writeInteger(address, 90)
+end
+
+ActraiserAngelSP90Address = nil
+ActraiserAngelSP90Original = nil
+setActraiserAngelSP90()
+
+ActraiserAngelSP90Timer = createTimer(nil, false)
+ActraiserAngelSP90Timer.Interval = 100
+ActraiserAngelSP90Timer.OnTimer = setActraiserAngelSP90
+ActraiserAngelSP90Timer.Enabled = true
+
+{$asm}
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserAngelSP90Timer then
+  ActraiserAngelSP90Timer.destroy()
+  ActraiserAngelSP90Timer = nil
+end
+
+local currentAddress = nil
+if ActraiserResolveAngelSP90 then
+  currentAddress = ActraiserResolveAngelSP90()
+end
+
+if currentAddress and currentAddress == ActraiserAngelSP90Address and ActraiserAngelSP90Original ~= nil then
+  writeInteger(currentAddress, ActraiserAngelSP90Original)
+end
+
+ActraiserAngelSP90Address = nil
+ActraiserAngelSP90Original = nil
+ActraiserResolveAngelSP90 = nil
+
+{$asm}
+ActR_AngelSP_UISet:
+  db 48 83 EC 38 4C 8B 51 50
+
+unregistersymbol(ActR_AngelSP_UISet)
+dealloc(ActR_AngelSP_UISetCode)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>8</ID>
+          <Description>"Max Realm Resources (999)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_RealmMaterial_UISet,GameAssembly.dll,48 83 EC 38 45 84 C0 75 20 48 8B 49 78 48 85 C9 74 1C 48 63 D2 45 33 C9 0F 57 D2 48 C7 44 24 20 00 00 00 00)
+alloc(ActR_RealmMaterial_UISetCode,64,ActR_RealmMaterial_UISet)
+label(ActR_RealmMaterial_UISetReturn)
+
+ActR_RealmMaterial_UISetCode:
+  // CRTUI.SetMaterial: synchronize the visible realm-resource counter.
+  mov edx,000003E7
+  sub rsp,38
+  test r8b,r8b
+  jmp ActR_RealmMaterial_UISetReturn
+
+assert(ActR_RealmMaterial_UISet,48 83 EC 38 45 84 C0)
+ActR_RealmMaterial_UISet:
+  jmp ActR_RealmMaterial_UISetCode
+  nop 2
+ActR_RealmMaterial_UISetReturn:
+
+registersymbol(ActR_RealmMaterial_UISet)
+
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserRealmMaterialTimer then
+  ActraiserRealmMaterialTimer.destroy()
+  ActraiserRealmMaterialTimer = nil
+end
+
+ActraiserResolveRealmMaterial = function()
+  local root = getAddressSafe('GameAssembly.dll+16A34B0')
+  if not root then return nil end
+
+  local klass = readPointer(root)
+  if not klass or klass == 0 then return nil end
+
+  local staticFields = readPointer(klass + 0xB8)
+  if not staticFields or staticFields == 0 then return nil end
+
+  local manager = readPointer(staticFields)
+  if not manager or manager == 0 then return nil end
+
+  local saveData = readPointer(manager + 0x30)
+  if not saveData or saveData == 0 then return nil end
+
+  local area = readInteger(saveData + 0x2C)
+  local crtDataArray = readPointer(saveData + 0x138)
+  if not area or area &lt; 0 or not crtDataArray or crtDataArray == 0 then return nil end
+
+  local areaCount = readInteger(crtDataArray + 0x18)
+  if not areaCount or area &gt;= areaCount then return nil end
+
+  local crtData = readPointer(crtDataArray + 0x20 + area * 8)
+  if not crtData or crtData == 0 then return nil end
+
+  local stageParameter = readPointer(crtData + 0x28)
+  if not stageParameter or stageParameter == 0 then return nil end
+
+  return stageParameter + 0x10
+end
+
+local function setActraiserRealmMaterial999()
+  local address = ActraiserResolveRealmMaterial()
+  if not address then return end
+
+  if ActraiserRealmMaterialOriginals[address] == nil then
+    ActraiserRealmMaterialOriginals[address] = readInteger(address)
+  end
+
+  writeInteger(address, 999)
+end
+
+ActraiserRealmMaterialOriginals = {}
+setActraiserRealmMaterial999()
+
+ActraiserRealmMaterialTimer = createTimer(nil, false)
+ActraiserRealmMaterialTimer.Interval = 100
+ActraiserRealmMaterialTimer.OnTimer = setActraiserRealmMaterial999
+ActraiserRealmMaterialTimer.Enabled = true
+
+{$asm}
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserRealmMaterialTimer then
+  ActraiserRealmMaterialTimer.destroy()
+  ActraiserRealmMaterialTimer = nil
+end
+
+if ActraiserRealmMaterialOriginals then
+  for address, original in pairs(ActraiserRealmMaterialOriginals) do
+    pcall(writeInteger, address, original)
+  end
+end
+
+ActraiserRealmMaterialOriginals = nil
+ActraiserResolveRealmMaterial = nil
+
+{$asm}
+ActR_RealmMaterial_UISet:
+  db 48 83 EC 38 45 84 C0
+
+unregistersymbol(ActR_RealmMaterial_UISet)
+dealloc(ActR_RealmMaterial_UISetCode)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9</ID>
+          <Description>"Infinite Usable Items"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_ItemManager_AddItem,GameAssembly.dll,48 89 7C 24 20 41 57 48 83 EC 20 80 3D 74 C3 78 00 00 44 8B FA 48 63 F9 75 12 8B 0D 34 25 33 00)
+alloc(ActR_ItemManager_AddItemCode,128,ActR_ItemManager_AddItem)
+label(ActR_ItemManager_AddItemOriginal)
+label(ActR_ItemManager_AddItemReturn)
+
+ActR_ItemManager_AddItemCode:
+  // ItemManager.AddItem(id, delta): retain normal pickups and resource handling.
+  cmp ecx,FFFFFFFF
+  je ActR_ItemManager_AddItemOriginal
+  test edx,edx
+  jns ActR_ItemManager_AddItemOriginal
+
+  // Normal inventory item with a negative delta: consume zero instead.
+  xor edx,edx
+
+ActR_ItemManager_AddItemOriginal:
+  mov [rsp+20],rdi
+  jmp ActR_ItemManager_AddItemReturn
+
+assert(ActR_ItemManager_AddItem,48 89 7C 24 20)
+ActR_ItemManager_AddItem:
+  jmp ActR_ItemManager_AddItemCode
+ActR_ItemManager_AddItemReturn:
+
+registersymbol(ActR_ItemManager_AddItem)
+
+[DISABLE]
+ActR_ItemManager_AddItem:
+  db 48 89 7C 24 20
+
+unregistersymbol(ActR_ItemManager_AddItem)
+dealloc(ActR_ItemManager_AddItemCode)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>11</ID>
+          <Description>"Fort Build Limit &amp; Fence Capacity = 99"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_FortBuildLimit,GameAssembly.dll,40 53 48 83 EC 20 48 8B D9 48 8B 89 18 01 00 00 48 85 C9 74 10 33 D2)
+aobscanmodule(ActR_FortMax_UISet,GameAssembly.dll,48 83 EC 38 48 8B 89 90 00 00 00 48 63 D2 45 84 C0 74 0A)
+aobscanmodule(ActR_FenceMax_UISet,GameAssembly.dll,48 83 EC 38 48 8B 89 A0 00 00 00 48 63 D2 45 84 C0 74 0A)
+alloc(ActR_FortBuildLimitCode,64,ActR_FortBuildLimit)
+alloc(ActR_FortMax_UISetCode,64,ActR_FortMax_UISet)
+alloc(ActR_FenceMax_UISetCode,64,ActR_FenceMax_UISet)
+label(ActR_FortBuildLimitReturn)
+label(ActR_FortMax_UISetReturn)
+label(ActR_FenceMax_UISetReturn)
+
+ActR_FortBuildLimitCode:
+  // CRTTemple.GetFortBuildLimit: return a practical unlimited cap without changing save data.
+  mov eax,00000063
+  ret
+
+assert(ActR_FortBuildLimit,40 53 48 83 EC 20)
+ActR_FortBuildLimit:
+  jmp ActR_FortBuildLimitCode
+  nop
+ActR_FortBuildLimitReturn:
+
+ActR_FortMax_UISetCode:
+  // CRTUI.SetFortMax: keep the visible maximum synchronized with the raised limit.
+  mov edx,00000063
+  sub rsp,38
+  mov rcx,[rcx+00000090]
+  jmp ActR_FortMax_UISetReturn
+
+assert(ActR_FortMax_UISet,48 83 EC 38 48 8B 89 90 00 00 00)
+ActR_FortMax_UISet:
+  jmp ActR_FortMax_UISetCode
+  nop 6
+ActR_FortMax_UISetReturn:
+
+ActR_FenceMax_UISetCode:
+  // CRTUI.SetFenceMax: keep the visible maximum synchronized with the raised limit.
+  mov edx,00000063
+  sub rsp,38
+  mov rcx,[rcx+000000A0]
+  jmp ActR_FenceMax_UISetReturn
+
+assert(ActR_FenceMax_UISet,48 83 EC 38 48 8B 89 A0 00 00 00)
+ActR_FenceMax_UISet:
+  jmp ActR_FenceMax_UISetCode
+  nop 6
+ActR_FenceMax_UISetReturn:
+
+registersymbol(ActR_FortBuildLimit)
+registersymbol(ActR_FortMax_UISet)
+registersymbol(ActR_FenceMax_UISet)
+
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserBuildLimitsTimer then
+  ActraiserBuildLimitsTimer.destroy()
+  ActraiserBuildLimitsTimer = nil
+end
+
+ActraiserResolveBuildLimitFields = function()
+  local root = getAddressSafe('GameAssembly.dll+16A29B0')
+  if not root then return nil, nil end
+
+  local klass = readPointer(root)
+  if not klass or klass == 0 then return nil, nil end
+
+  local staticFields = readPointer(klass + 0xB8)
+  if not staticFields or staticFields == 0 then return nil, nil end
+
+  local stage = readPointer(staticFields + 0x38)
+  if not stage or stage == 0 then return nil, nil end
+
+  local temple = readPointer(stage + 0x58)
+  if not temple or temple == 0 then return nil, nil end
+
+  -- CRTTemple.Parameter.FORT_LIMIT and DEF_LIMIT are runtime fields, not save data.
+  return temple + 0x44, temple + 0x48
+end
+
+local function setActraiserBuildLimits99()
+  local fortAddress, fenceAddress = ActraiserResolveBuildLimitFields()
+  local addresses = { fortAddress, fenceAddress }
+
+  for _, address in ipairs(addresses) do
+    if address then
+      if ActraiserBuildLimitOriginals[address] == nil then
+        ActraiserBuildLimitOriginals[address] = readInteger(address)
+      end
+      writeInteger(address, 99)
+    end
+  end
+end
+
+ActraiserBuildLimitOriginals = {}
+setActraiserBuildLimits99()
+
+ActraiserBuildLimitsTimer = createTimer(nil, false)
+ActraiserBuildLimitsTimer.Interval = 100
+ActraiserBuildLimitsTimer.OnTimer = setActraiserBuildLimits99
+ActraiserBuildLimitsTimer.Enabled = true
+
+{$asm}
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserBuildLimitsTimer then
+  ActraiserBuildLimitsTimer.destroy()
+  ActraiserBuildLimitsTimer = nil
+end
+
+if ActraiserBuildLimitOriginals then
+  for address, original in pairs(ActraiserBuildLimitOriginals) do
+    pcall(function()
+      if readInteger(address) == 99 then
+        writeInteger(address, original)
+      end
+    end)
+  end
+end
+
+ActraiserBuildLimitOriginals = nil
+ActraiserResolveBuildLimitFields = nil
+
+{$asm}
+ActR_FortBuildLimit:
+  db 40 53 48 83 EC 20
+
+ActR_FortMax_UISet:
+  db 48 83 EC 38 48 8B 89 90 00 00 00
+
+ActR_FenceMax_UISet:
+  db 48 83 EC 38 48 8B 89 A0 00 00 00
+
+unregistersymbol(ActR_FortBuildLimit)
+unregistersymbol(ActR_FortMax_UISet)
+unregistersymbol(ActR_FenceMax_UISet)
+dealloc(ActR_FortBuildLimitCode)
+dealloc(ActR_FortMax_UISetCode)
+dealloc(ActR_FenceMax_UISetCode)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>14</ID>
+          <Description>"Fence Stock = 99"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_Fence_UISet,GameAssembly.dll,48 83 EC 38 45 84 C0 75 23 48 8B 89 98 00 00 00 48 85 C9 74 1C 48 63 D2 45 33 C9 0F 57 D2)
+alloc(ActR_Fence_UISetCode,64,ActR_Fence_UISet)
+label(ActR_Fence_UISetReturn)
+
+ActR_Fence_UISetCode:
+  // CRTUI.SetFence: keep the normal-fence HUD counter synchronized at 99.
+  mov edx,00000063
+  sub rsp,38
+  test r8b,r8b
+  jmp ActR_Fence_UISetReturn
+
+assert(ActR_Fence_UISet,48 83 EC 38 45 84 C0)
+ActR_Fence_UISet:
+  jmp ActR_Fence_UISetCode
+  nop 2
+ActR_Fence_UISetReturn:
+
+registersymbol(ActR_Fence_UISet)
+
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserFenceStockTimer then
+  ActraiserFenceStockTimer.destroy()
+  ActraiserFenceStockTimer = nil
+end
+
+ActraiserResolveSavedFenceStock = function()
+  local root = getAddressSafe('GameAssembly.dll+16A34B0')
+  if not root then return nil end
+
+  local klass = readPointer(root)
+  if not klass or klass == 0 then return nil end
+
+  local staticFields = readPointer(klass + 0xB8)
+  if not staticFields or staticFields == 0 then return nil end
+
+  local manager = readPointer(staticFields)
+  if not manager or manager == 0 then return nil end
+
+  local saveData = readPointer(manager + 0x30)
+  if not saveData or saveData == 0 then return nil end
+
+  local area = readInteger(saveData + 0x2C)
+  local crtDataArray = readPointer(saveData + 0x138)
+  if not area or area &lt; 0 or not crtDataArray or crtDataArray == 0 then return nil end
+
+  local areaCount = readInteger(crtDataArray + 0x18)
+  if not areaCount or area &gt;= areaCount then return nil end
+
+  local crtData = readPointer(crtDataArray + 0x20 + area * 8)
+  if not crtData or crtData == 0 then return nil end
+
+  local stageParameter = readPointer(crtData + 0x28)
+  if not stageParameter or stageParameter == 0 then return nil end
+
+  return stageParameter + 0x20
+end
+
+ActraiserResolveRaidFenceStock = function()
+  local root = getAddressSafe('GameAssembly.dll+16A29B0')
+  if not root then return nil end
+
+  local klass = readPointer(root)
+  if not klass or klass == 0 then return nil end
+
+  local staticFields = readPointer(klass + 0xB8)
+  if not staticFields or staticFields == 0 then return nil end
+
+  local stage = readPointer(staticFields + 0x38)
+  if not stage or stage == 0 then return nil end
+
+  local fortBuild = readPointer(stage + 0x60)
+  if not fortBuild or fortBuild == 0 then return nil end
+
+  -- fenceNumTmp is the regular fence inventory actively consumed during raids.
+  return fortBuild + 0x1BC
+end
+
+local function setActraiserFenceStock99()
+  local savedAddress = ActraiserResolveSavedFenceStock()
+  if savedAddress then
+    if ActraiserFenceStockSavedOriginals[savedAddress] == nil then
+      ActraiserFenceStockSavedOriginals[savedAddress] = readInteger(savedAddress)
+    end
+    writeInteger(savedAddress, 99)
+  end
+
+  local raidAddress = ActraiserResolveRaidFenceStock()
+  if raidAddress then
+    if raidAddress ~= ActraiserFenceStockRaidAddress then
+      ActraiserFenceStockRaidAddress = raidAddress
+      ActraiserFenceStockRaidOriginal = readInteger(raidAddress)
+    end
+    writeInteger(raidAddress, 99)
+  end
+end
+
+ActraiserFenceStockSavedOriginals = {}
+ActraiserFenceStockRaidAddress = nil
+ActraiserFenceStockRaidOriginal = nil
+setActraiserFenceStock99()
+
+ActraiserFenceStockTimer = createTimer(nil, false)
+ActraiserFenceStockTimer.Interval = 100
+ActraiserFenceStockTimer.OnTimer = setActraiserFenceStock99
+ActraiserFenceStockTimer.Enabled = true
+
+{$asm}
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserFenceStockTimer then
+  ActraiserFenceStockTimer.destroy()
+  ActraiserFenceStockTimer = nil
+end
+
+if ActraiserFenceStockSavedOriginals then
+  for address, original in pairs(ActraiserFenceStockSavedOriginals) do
+    pcall(function()
+      if readInteger(address) == 99 then
+        writeInteger(address, original)
+      end
+    end)
+  end
+end
+
+local currentRaidAddress = nil
+if ActraiserResolveRaidFenceStock then
+  currentRaidAddress = ActraiserResolveRaidFenceStock()
+end
+
+if currentRaidAddress and currentRaidAddress == ActraiserFenceStockRaidAddress and ActraiserFenceStockRaidOriginal ~= nil then
+  if readInteger(currentRaidAddress) == 99 then
+    writeInteger(currentRaidAddress, ActraiserFenceStockRaidOriginal)
+  end
+end
+
+ActraiserFenceStockSavedOriginals = nil
+ActraiserFenceStockRaidAddress = nil
+ActraiserFenceStockRaidOriginal = nil
+ActraiserResolveSavedFenceStock = nil
+ActraiserResolveRaidFenceStock = nil
+
+{$asm}
+ActR_Fence_UISet:
+  db 48 83 EC 38 45 84 C0
+
+unregistersymbol(ActR_Fence_UISet)
+dealloc(ActR_Fence_UISetCode)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>12</ID>
+          <Description>"Invincible Forts &amp; Fences"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_Fort_SetDamage,GameAssembly.dll,48 89 5C 24 18 55 56 41 57 48 83 EC 50 80 3D CB C8 3C 01 00 41 0F B6 E9 0F 29 74 24 40 45 8B F8)
+
+// CRTFort.SetDamage is exclusive to player-built forts and defensive fences.
+// Return before HP, damage effects, fire, or frozen conditions are applied.
+assert(ActR_Fort_SetDamage,48 89 5C 24 18)
+ActR_Fort_SetDamage:
+  db C3 90 90 90 90
+
+registersymbol(ActR_Fort_SetDamage)
+
+[DISABLE]
+ActR_Fort_SetDamage:
+  db 48 89 5C 24 18
+
+unregistersymbol(ActR_Fort_SetDamage)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>13</ID>
+          <Description>"Super Champions (Combat Stats + Invincibility)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_Champion_SetDamage,GameAssembly.dll,48 89 5C 24 08 57 48 83 EC 20 48 8B D9 41 8B F8 48 8B 89 B8 00 00 00 48 85 C9 0F 84 C5 00 00 00)
+
+// CRTHeroBase.SetDamage is exclusive to the player's champions.
+// Return before defense calculation, HP loss, hit reactions, or death handling.
+assert(ActR_Champion_SetDamage,48 89 5C 24 08)
+ActR_Champion_SetDamage:
+  db C3 90 90 90 90
+
+registersymbol(ActR_Champion_SetDamage)
+
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserSuperChampionTimer then
+  ActraiserSuperChampionTimer.destroy()
+  ActraiserSuperChampionTimer = nil
+end
+
+ActraiserSuperChampionOriginals = {}
+ActraiserSuperChampionUnitOriginals = {}
+
+ActraiserForEachChampion = function(callback)
+  local root = getAddressSafe('GameAssembly.dll+16A1698')
+  if not root then return end
+
+  local klass = readPointer(root)
+  if not klass or klass == 0 then return end
+
+  local staticFields = readPointer(klass + 0xB8)
+  if not staticFields or staticFields == 0 then return end
+
+  local manager = readPointer(staticFields)
+  if not manager or manager == 0 then return end
+
+  local heroes = readPointer(manager + 0x98)
+  if not heroes or heroes == 0 then return end
+
+  local count = readInteger(heroes + 0x18)
+  if not count or count &lt; 1 then return end
+  if count &gt; 12 then count = 12 end
+
+  for i = 0, count - 1 do
+    local hero = readPointer(heroes + 0x20 + i * 8)
+    if hero and hero ~= 0 then
+      local unitParam = readPointer(hero + 0xB0)
+      local heroParam = readPointer(hero + 0xB8)
+      if unitParam and unitParam ~= 0 and heroParam and heroParam ~= 0 then
+        callback(heroParam, unitParam)
+      end
+    end
+  end
+end
+
+local function boostActraiserChampion(heroParam, unitParam)
+  if not ActraiserSuperChampionUnitOriginals[unitParam] then
+    ActraiserSuperChampionUnitOriginals[unitParam] = {
+      hp = readSmallInteger(unitParam + 0x18),
+      atk = readSmallInteger(unitParam + 0x1A),
+      def = readSmallInteger(unitParam + 0x1C),
+      mdf = readSmallInteger(unitParam + 0x1E),
+      resFire = readSmallInteger(unitParam + 0x28),
+      resIce = readSmallInteger(unitParam + 0x2A),
+      atkSpd = readFloat(unitParam + 0x30),
+      atkRng = readSmallInteger(unitParam + 0x36),
+      spAtk = readFloat(unitParam + 0x40),
+      spRng = readSmallInteger(unitParam + 0x44)
+    }
+  end
+
+  if not ActraiserSuperChampionOriginals[heroParam] then
+    ActraiserSuperChampionOriginals[heroParam] = {
+      atk = readSmallInteger(heroParam + 0x20),
+      def = readSmallInteger(heroParam + 0x22),
+      mdf = readSmallInteger(heroParam + 0x24),
+      resFire = readSmallInteger(heroParam + 0x30),
+      resIce = readSmallInteger(heroParam + 0x32),
+      atkSpd = readFloat(heroParam + 0x38),
+      atkRng = readFloat(heroParam + 0x40),
+      atkAng = readFloat(heroParam + 0x44),
+      spAtk = readFloat(heroParam + 0x50),
+      spRng = readFloat(heroParam + 0x54),
+      spAng = readFloat(heroParam + 0x58)
+    }
+  end
+
+  -- This runtime datatable copy also feeds Ally Profiles and newly spawned champions.
+  -- Range is stored here in hundredths, so 2000 becomes 20.0 in the combat block.
+  writeSmallInteger(unitParam + 0x18, 999)
+  writeSmallInteger(unitParam + 0x1A, 999)
+  writeSmallInteger(unitParam + 0x1C, 999)
+  writeSmallInteger(unitParam + 0x1E, 999)
+  writeSmallInteger(unitParam + 0x28, 999)
+  writeSmallInteger(unitParam + 0x2A, 999)
+  writeFloat(unitParam + 0x30, 0.15)
+  writeSmallInteger(unitParam + 0x36, 2000)
+  writeFloat(unitParam + 0x40, 10.0)
+  writeSmallInteger(unitParam + 0x44, 2000)
+
+  -- Refill the live champion to the now-boosted runtime maximum.
+  local maxHP = readSmallInteger(unitParam + 0x18)
+  if maxHP and maxHP &gt; 0 then
+    writeSmallInteger(heroParam + 0x1E, maxHP)
+  end
+
+  -- Deliberately stay inside the native short/float field types.
+  writeSmallInteger(heroParam + 0x20, 999)  -- Attack
+  writeSmallInteger(heroParam + 0x22, 999)  -- Defense
+  writeSmallInteger(heroParam + 0x24, 999)  -- Magic defense
+  writeSmallInteger(heroParam + 0x30, 999)  -- Fire resistance
+  writeSmallInteger(heroParam + 0x32, 999)  -- Ice resistance
+  writeFloat(heroParam + 0x38, 0.15)         -- Attack cooldown (lower is faster)
+  writeFloat(heroParam + 0x40, 20.0)         -- Normal attack range
+  writeFloat(heroParam + 0x44, 360.0)        -- Normal attack arc
+  writeFloat(heroParam + 0x50, 10.0)         -- Special attack power
+  writeFloat(heroParam + 0x54, 20.0)         -- Special attack range
+  writeFloat(heroParam + 0x58, 360.0)        -- Special attack arc
+end
+
+local function boostAllActraiserChampions()
+  pcall(function()
+    ActraiserForEachChampion(boostActraiserChampion)
+  end)
+end
+
+boostAllActraiserChampions()
+ActraiserSuperChampionTimer = createTimer(nil, false)
+ActraiserSuperChampionTimer.Interval = 100
+ActraiserSuperChampionTimer.OnTimer = boostAllActraiserChampions
+ActraiserSuperChampionTimer.Enabled = true
+
+{$asm}
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserSuperChampionTimer then
+  ActraiserSuperChampionTimer.destroy()
+  ActraiserSuperChampionTimer = nil
+end
+
+if ActraiserForEachChampion and ActraiserSuperChampionOriginals then
+  pcall(function()
+    ActraiserForEachChampion(function(heroParam, unitParam)
+      local original = ActraiserSuperChampionOriginals[heroParam]
+      if not original then return end
+
+      local unitOriginal = ActraiserSuperChampionUnitOriginals[unitParam]
+      if unitOriginal and unitOriginal.hp and unitOriginal.hp &gt; 0 then
+        writeSmallInteger(heroParam + 0x1E, unitOriginal.hp)
+      end
+
+      writeSmallInteger(heroParam + 0x20, original.atk)
+      writeSmallInteger(heroParam + 0x22, original.def)
+      writeSmallInteger(heroParam + 0x24, original.mdf)
+      writeSmallInteger(heroParam + 0x30, original.resFire)
+      writeSmallInteger(heroParam + 0x32, original.resIce)
+      writeFloat(heroParam + 0x38, original.atkSpd)
+      writeFloat(heroParam + 0x40, original.atkRng)
+      writeFloat(heroParam + 0x44, original.atkAng)
+      writeFloat(heroParam + 0x50, original.spAtk)
+      writeFloat(heroParam + 0x54, original.spRng)
+      writeFloat(heroParam + 0x58, original.spAng)
+    end)
+  end)
+end
+
+-- Unit parameters are long-lived datatable objects. Restore every copy touched,
+-- including a prior level's object if a champion leveled up while enabled.
+if ActraiserSuperChampionUnitOriginals then
+  for unitParam, original in pairs(ActraiserSuperChampionUnitOriginals) do
+    pcall(function()
+      writeSmallInteger(unitParam + 0x18, original.hp)
+      writeSmallInteger(unitParam + 0x1A, original.atk)
+      writeSmallInteger(unitParam + 0x1C, original.def)
+      writeSmallInteger(unitParam + 0x1E, original.mdf)
+      writeSmallInteger(unitParam + 0x28, original.resFire)
+      writeSmallInteger(unitParam + 0x2A, original.resIce)
+      writeFloat(unitParam + 0x30, original.atkSpd)
+      writeSmallInteger(unitParam + 0x36, original.atkRng)
+      writeFloat(unitParam + 0x40, original.spAtk)
+      writeSmallInteger(unitParam + 0x44, original.spRng)
+    end)
+  end
+end
+
+ActraiserSuperChampionOriginals = nil
+ActraiserSuperChampionUnitOriginals = nil
+ActraiserForEachChampion = nil
+
+{$asm}
+ActR_Champion_SetDamage:
+  db 48 89 5C 24 08
+
+unregistersymbol(ActR_Champion_SetDamage)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>17</ID>
+          <Description>"No Miracle Cooldowns"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_Miracle_GetCooldown,GameAssembly.dll,48 89 5C 24 08 57 48 83 EC 20 80 3D 43 94 33 01 00 8B DA 8B F9 75 12)
+
+// New miracle uses receive a zero-second cooldown.
+assert(ActR_Miracle_GetCooldown,48 89 5C 24 08)
+ActR_Miracle_GetCooldown:
+  db 31 C0 C3 90 90
+
+registersymbol(ActR_Miracle_GetCooldown)
+
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserMiracleCooldownTimer then
+  ActraiserMiracleCooldownTimer.destroy()
+  ActraiserMiracleCooldownTimer = nil
+end
+
+ActraiserResolveMiracleRange = function()
+  local root = getAddressSafe('GameAssembly.dll+16A0E90')
+  if not root then return nil end
+
+  local klass = readPointer(root)
+  if not klass or klass == 0 then return nil end
+
+  local staticFields = readPointer(klass + 0xB8)
+  if not staticFields or staticFields == 0 then return nil end
+
+  local instance = readPointer(staticFields)
+  if not instance or instance == 0 then return nil end
+  return instance
+end
+
+local function clearActraiserFloatArray(array)
+  if not array or array == 0 then return end
+  local count = readInteger(array + 0x18)
+  if not count or count &lt; 1 then return end
+  if count &gt; 16 then count = 16 end
+  for i = 0, count - 1 do
+    writeFloat(array + 0x20 + i * 4, 0)
+  end
+end
+
+local function clearActraiserBoolArray(array)
+  if not array or array == 0 then return end
+  local count = readInteger(array + 0x18)
+  if not count or count &lt; 1 then return end
+  if count &gt; 16 then count = 16 end
+  for i = 0, count - 1 do
+    writeBytes(array + 0x20 + i, 0)
+  end
+end
+
+local function clearActraiserMiracleCooldowns()
+  pcall(function()
+    local instance = ActraiserResolveMiracleRange()
+    if not instance then return end
+
+    clearActraiserBoolArray(readPointer(instance + 0xA8))
+    clearActraiserFloatArray(readPointer(instance + 0xB0))
+    clearActraiserFloatArray(readPointer(instance + 0xB8))
+    clearActraiserFloatArray(readPointer(instance + 0xE0))
+    writeBytes(instance + 0xD4, 0)
+    writeFloat(instance + 0xD8, 0)
+  end)
+end
+
+clearActraiserMiracleCooldowns()
+ActraiserMiracleCooldownTimer = createTimer(nil, false)
+ActraiserMiracleCooldownTimer.Interval = 100
+ActraiserMiracleCooldownTimer.OnTimer = clearActraiserMiracleCooldowns
+ActraiserMiracleCooldownTimer.Enabled = true
+
+{$asm}
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserMiracleCooldownTimer then
+  ActraiserMiracleCooldownTimer.destroy()
+  ActraiserMiracleCooldownTimer = nil
+end
+ActraiserResolveMiracleRange = nil
+
+{$asm}
+ActR_Miracle_GetCooldown:
+  db 48 89 5C 24 08
+
+unregistersymbol(ActR_Miracle_GetCooldown)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>18</ID>
+          <Description>"Super Forts (Attack + Speed + Range + Defense)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserSuperFortTimer then
+  ActraiserSuperFortTimer.destroy()
+  ActraiserSuperFortTimer = nil
+end
+
+ActraiserSuperFortOriginals = {}
+
+ActraiserResolveFortBuild = function()
+  local root = getAddressSafe('GameAssembly.dll+16A29B0')
+  if not root then return nil end
+
+  local klass = readPointer(root)
+  if not klass or klass == 0 then return nil end
+
+  local staticFields = readPointer(klass + 0xB8)
+  if not staticFields or staticFields == 0 then return nil end
+
+  local stage = readPointer(staticFields + 0x38)
+  if not stage or stage == 0 then return nil end
+
+  local fortBuild = readPointer(stage + 0x60)
+  if not fortBuild or fortBuild == 0 then return nil end
+  return fortBuild
+end
+
+ActraiserForEachCombatFort = function(callback)
+  local fortBuild = ActraiserResolveFortBuild()
+  if not fortBuild then return end
+
+  local function walkFortList(list)
+    if not list or list == 0 then return end
+    local items = readPointer(list + 0x10)
+    local count = readInteger(list + 0x18)
+    if not items or items == 0 or not count or count &lt; 1 then return end
+    if count &gt; 128 then count = 128 end
+
+    for i = 0, count - 1 do
+      local fort = readPointer(items + 0x20 + i * 8)
+      if fort and fort ~= 0 then
+        local param = readPointer(fort + 0x78)
+        if param and param ~= 0 then callback(param) end
+      end
+    end
+  end
+
+  -- Gate/defense forts and arrow/magic attack forts; fence list +0x148 is excluded.
+  walkFortList(readPointer(fortBuild + 0x138))
+  walkFortList(readPointer(fortBuild + 0x140))
+end
+
+local function boostActraiserFort(param)
+  if not ActraiserSuperFortOriginals[param] then
+    ActraiserSuperFortOriginals[param] = {
+      atk = readSmallInteger(param + 0x22),
+      def = readSmallInteger(param + 0x24),
+      mdf = readSmallInteger(param + 0x26),
+      resFire = readSmallInteger(param + 0x30),
+      resIce = readSmallInteger(param + 0x32),
+      atkSpd = readFloat(param + 0x38),
+      atkRng = readFloat(param + 0x40),
+      atkAng = readSmallInteger(param + 0x44),
+      bulletRng = readFloat(param + 0x48),
+      targets = readSmallInteger(param + 0x4C)
+    }
+  end
+
+  writeSmallInteger(param + 0x22, 999)
+  writeSmallInteger(param + 0x24, 999)
+  writeSmallInteger(param + 0x26, 999)
+  writeSmallInteger(param + 0x30, 999)
+  writeSmallInteger(param + 0x32, 999)
+  writeFloat(param + 0x38, 0.15)
+  writeFloat(param + 0x40, 20.0)
+  writeSmallInteger(param + 0x44, 360)
+  writeFloat(param + 0x48, 20.0)
+  writeSmallInteger(param + 0x4C, 20)
+end
+
+local function boostAllActraiserForts()
+  pcall(function()
+    ActraiserForEachCombatFort(boostActraiserFort)
+  end)
+end
+
+boostAllActraiserForts()
+ActraiserSuperFortTimer = createTimer(nil, false)
+ActraiserSuperFortTimer.Interval = 100
+ActraiserSuperFortTimer.OnTimer = boostAllActraiserForts
+ActraiserSuperFortTimer.Enabled = true
+
+{$asm}
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserSuperFortTimer then
+  ActraiserSuperFortTimer.destroy()
+  ActraiserSuperFortTimer = nil
+end
+
+if ActraiserForEachCombatFort and ActraiserSuperFortOriginals then
+  pcall(function()
+    ActraiserForEachCombatFort(function(param)
+      local original = ActraiserSuperFortOriginals[param]
+      if not original then return end
+
+      writeSmallInteger(param + 0x22, original.atk)
+      writeSmallInteger(param + 0x24, original.def)
+      writeSmallInteger(param + 0x26, original.mdf)
+      writeSmallInteger(param + 0x30, original.resFire)
+      writeSmallInteger(param + 0x32, original.resIce)
+      writeFloat(param + 0x38, original.atkSpd)
+      writeFloat(param + 0x40, original.atkRng)
+      writeSmallInteger(param + 0x44, original.atkAng)
+      writeFloat(param + 0x48, original.bulletRng)
+      writeSmallInteger(param + 0x4C, original.targets)
+    end)
+  end)
+end
+
+ActraiserSuperFortOriginals = nil
+ActraiserForEachCombatFort = nil
+ActraiserResolveFortBuild = nil
+
+{$asm}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>20</ID>
+          <Description>"All Legendary Chronicles = 999"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserAllChroniclesTimer then
+  ActraiserAllChroniclesTimer.destroy()
+  ActraiserAllChroniclesTimer = nil
+end
+
+ActraiserResolveItemArray = function()
+  local root = getAddressSafe('GameAssembly.dll+16A34B0')
+  if not root then return nil end
+
+  local klass = readPointer(root)
+  if not klass or klass == 0 then return nil end
+
+  local staticFields = readPointer(klass + 0xB8)
+  if not staticFields or staticFields == 0 then return nil end
+
+  local manager = readPointer(staticFields)
+  if not manager or manager == 0 then return nil end
+
+  local saveData = readPointer(manager + 0x30)
+  if not saveData or saveData == 0 then return nil end
+
+  local itemArray = readPointer(saveData + 0x38)
+  if not itemArray or itemArray == 0 then return nil end
+  return itemArray
+end
+
+local function setActraiserAllChronicles999()
+  local itemArray = ActraiserResolveItemArray()
+  if not itemArray then return end
+
+  local itemCount = readInteger(itemArray + 0x18)
+  if not itemCount or itemCount &lt;= 30 then return end
+
+  -- Item IDs 25-30 are Philotas, Daniella, Alonso, Migrana, Shemaal, and Taia.
+  for itemID = 25, 30 do
+    local address = itemArray + 0x20 + itemID * 4
+    if ActraiserAllChronicleOriginals[address] == nil then
+      ActraiserAllChronicleOriginals[address] = readInteger(address)
+    end
+    writeInteger(address, 999)
+  end
+end
+
+ActraiserAllChronicleOriginals = {}
+setActraiserAllChronicles999()
+
+ActraiserAllChroniclesTimer = createTimer(nil, false)
+ActraiserAllChroniclesTimer.Interval = 100
+ActraiserAllChroniclesTimer.OnTimer = setActraiserAllChronicles999
+ActraiserAllChroniclesTimer.Enabled = true
+
+{$asm}
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+
+if ActraiserAllChroniclesTimer then
+  ActraiserAllChroniclesTimer.destroy()
+  ActraiserAllChroniclesTimer = nil
+end
+
+if ActraiserAllChronicleOriginals then
+  for address, original in pairs(ActraiserAllChronicleOriginals) do
+    pcall(function()
+      if readInteger(address) == 999 then
+        writeInteger(address, original)
+      end
+    end)
+  end
+end
+
+ActraiserAllChronicleOriginals = nil
+ActraiserResolveItemArray = nil
+
+{$asm}
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>21</ID>
+          <Description>"Instant Champion Summon (Full Gauge)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+aobscanmodule(ActR_Summon_SetGauge,GameAssembly.dll,40 53 48 83 EC 60 80 3D 66 1A 14 01 00 48 8B D9 0F 29 74 24 50 0F 28 F1)
+aobscanmodule(ActR_Summon_Enable,GameAssembly.dll,F3 0F 10 41 2C 0F 2F 41 20 0F 93 C0 C3)
+alloc(ActR_Summon_SetGaugeCode,96,ActR_Summon_SetGauge)
+alloc(ActR_Summon_EnableCode,96,ActR_Summon_Enable)
+label(ActR_Summon_SetGaugeReturn)
+
+ActR_Summon_SetGaugeCode:
+  // TDUIHeroSummonGauge.SetGaugeValue receives its requested value in XMM1.
+  // Replace that value with GAUGE_VALUE_MAX so the original method also keeps it full.
+  movss xmm1,[rcx+20]
+  movss [rcx+2C],xmm1
+  push rbx
+  sub rsp,60
+  jmp ActR_Summon_SetGaugeReturn
+
+assert(ActR_Summon_SetGauge,40 53 48 83 EC 60)
+ActR_Summon_SetGauge:
+  jmp ActR_Summon_SetGaugeCode
+  nop
+ActR_Summon_SetGaugeReturn:
+
+ActR_Summon_EnableCode:
+  // Refresh the gauge and allow the summon button immediately.
+  movss xmm0,[rcx+20]
+  movss [rcx+2C],xmm0
+  mov al,01
+  ret
+
+assert(ActR_Summon_Enable,F3 0F 10 41 2C)
+ActR_Summon_Enable:
+  jmp ActR_Summon_EnableCode
+
+registersymbol(ActR_Summon_SetGauge)
+registersymbol(ActR_Summon_Enable)
+
+[DISABLE]
+ActR_Summon_SetGauge:
+  db 40 53 48 83 EC 60
+ActR_Summon_Enable:
+  db F3 0F 10 41 2C
+
+unregistersymbol(ActR_Summon_SetGauge)
+unregistersymbol(ActR_Summon_Enable)
+dealloc(ActR_Summon_SetGaugeCode)
+dealloc(ActR_Summon_EnableCode)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>24</ID>
+          <Description>"Death Aura - Cave Monsters Only (No Sieges)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+// CRTMonsterBase.CheckHit belongs only to the ordinary settlement cave-monster
+// family. Invasion/siege attackers use the separate CRTTDMonster system.
+aobscanmodule(ActR_CaveMonsterDeath,GameAssembly.dll,48 89 5C 24 20 55 48 81 EC 90 00 00 00 80 3D 81 71 33 01 00 48 8B D9 0F 29 7C 24 70 0F 29 B4 24 80 00 00 00)
+alloc(ActR_CaveMonsterDeathCode,192,ActR_CaveMonsterDeath)
+label(ActR_CaveMonsterDeathOriginal)
+label(ActR_CaveMonsterDeathReturn)
+
+ActR_CaveMonsterDeathCode:
+  // Queue exactly the monster's remaining HP through CheckHit's native damage
+  // path. The original routine then handles death, rewards, counters and cleanup.
+  cmp dword ptr [rcx+000000E4],04
+  je ActR_CaveMonsterDeathOriginal
+  mov eax,[rcx+000000D0]
+  test eax,eax
+  jle ActR_CaveMonsterDeathOriginal
+  mov [rcx+00000108],eax
+  mov byte ptr [rcx+0000010C],01
+
+ActR_CaveMonsterDeathOriginal:
+  mov [rsp+20],rbx
+  push rbp
+  sub rsp,00000090
+  jmp ActR_CaveMonsterDeathReturn
+
+assert(ActR_CaveMonsterDeath,48 89 5C 24 20 55 48 81 EC 90 00 00 00)
+ActR_CaveMonsterDeath:
+  jmp ActR_CaveMonsterDeathCode
+  nop 8
+ActR_CaveMonsterDeathReturn:
+
+registersymbol(ActR_CaveMonsterDeath)
+
+[DISABLE]
+ActR_CaveMonsterDeath:
+  db 48 89 5C 24 20 55 48 81 EC 90 00 00 00
+
+unregistersymbol(ActR_CaveMonsterDeath)
+dealloc(ActR_CaveMonsterDeathCode)
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>22</ID>
+      <Description>"Gameplay / Time"</Description>
+      <Options moHideChildren="1"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>19</ID>
+          <Description>"Safe Game Speed = 2x"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+local ok, err = pcall(function()
+  speedhack_setSpeed(2.0)
+end)
+if not ok then error(err) end
+
+{$asm}
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+
+pcall(function()
+  speedhack_setSpeed(1.0)
+end)
+
+{$asm}
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <Comments>Actraiser Renaissance (Steam/PC)
+Includes separate script groups for Act Mode / side-scroller gameplay and Settlement / Angel Mode.
+
+Act Mode Infinite HP captures the exact live player parameter-block pointer during ActlReadObject.CallFixedUpdate, then filters the authoritative shared SVObjParamater.Damage routine by pointer identity. Infinite MP resolves SceneAct.playerReader and continuously copies the live maximum ExpUniValues float into both the current MP value object and display cache. Infinite Lives keeps SaveData.actContinueCnt (continues used) at zero; zero corresponds to the displayed three lives. Super Damage multiplies the final positive damage calculated by ActlReadObject.CallGetDamage for every parameter block except the exact live player block by ten. One-Hit Kill substitutes the target's exact current HP at the adjacent final-damage write. No Player Hit Detection exits ActlReadObject.CallGetDamage only when its target owns the exact live player parameter block, preventing the game's damage reaction and knockback processing while leaving enemy targets and the player's attack path unchanged. It fails open whenever the player identity chain is unavailable and is compatible with the other Act Mode scripts.
+
+Settlement / Angel Mode Infinite HP and Infinite SP hook the angel-specific CRTAngel setters and replace attempted changes with the live maxHp or maxSp field. Angel SP Value = 90 keeps both the saved value and visible HUD counter at 90 while enabled and restores its previous saved value when disabled. It is compatible with Infinite Angel SP.
+
+Death Aura - Cave Monsters Only targets CRTMonsterBase.CheckHit, which is shared by the ordinary cave-spawned settlement monsters but not the separate CRTTDMonster invasion/siege system. It queues each roaming monster's exact remaining HP through the native hit pipeline so the game retains its normal death animation, rewards, counters, and cleanup. It does not damage caves/nests, buildings, the angel, or siege attackers.
+
+Max Realm Resources keeps the active realm's material/resource counter at 999 and synchronizes its HUD display. Infinite Usable Items prevents negative ItemManager quantity changes for normal inventory IDs while preserving pickups and the separate realm-resource ID. Fort Build Limit &amp; Fence Capacity = 99 raises the permanent-fort construction cap and normal-fence carrying capacity, along with their HUD maximums, without changing placement rules or material costs. Fence Stock = 99 separately keeps both the active realm inventory and the temporary raid inventory of normal fences at 99 and synchronizes the HUD; it deliberately leaves the special decoy/bell fence's scripted use count unchanged. Invincible Forts &amp; Fences blocks CRTFort.SetDamage before HP loss or damaging conditions are applied; monsters and the temple use separate routines.
+
+Super Champions targets only the six objects exposed by CRTHeroManager. While enabled, HP, Attack, Defense, Magic Defense, Fire Resistance, and Ice Resistance are set to 999; champion damage is blocked; normal and special attack range/arc are greatly expanded; and attack cooldown is reduced to 0.15 seconds. It updates both the live combat block and the runtime datatable copy used by Ally Profiles and newly spawned champions. Original values are restored on disable, and no boosted values are written into saved level/progression data.
+
+No Miracle Cooldowns makes new cooldown durations zero and clears the live normal/special cooldown arrays. Super Forts targets only the gate/defense and arrow/magic fort lists, setting Attack, Defense, Magic Defense, and elemental resistances to 999, reducing attack cooldown to 0.15 seconds, expanding attack/projectile range to 20, and raising simultaneous targets to 20; fences are excluded. All Legendary Chronicles = 999 targets the six documented experience-book item IDs 25-30. Instant Champion Summon continuously refills the summon gauge through its native update and availability routines without bypassing champion unlock eligibility or forcing duplicate/already-active champions.
+
+Safe Game Speed uses Cheat Engine's speed control at a conservative 2x and restores normal 1x speed when disabled.
+
+Settlement combat scripts remain isolated from Act Mode and enemy health. The Act damage entries resolve SceneAct.playerReader.gameParamater and leave that exact player pointer on the unmodified path; this avoids the unused zero-valued ParamType fields found on live enemies.
+
+Attach Cheat Engine to ActraiserR.exe, expand the group, and activate entries individually.</Comments>
+</CheatTable>
